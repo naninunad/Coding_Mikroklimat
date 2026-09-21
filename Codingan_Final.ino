@@ -1,8 +1,6 @@
 /*
  * ============================================================
- * ESP32 #1 — Greenhouse Controller (REV25 PERFECT EDITION)
- * Fitur: Anti-Tabrakan Arus, Sinkronisasi Kolom Underscore Supabase,
- * Anti-Memory Leak, WiFi Keep-Alive 24/7 (Non-Stop Tanpa Restart)
+ * ESP32 #1 — Greenhouse Controller (REV25)
  * ============================================================
  */
 
@@ -35,10 +33,6 @@ const unsigned long ACTUATOR_INTERVAL = 33000;  // 33 detik
 const unsigned long MIST_ON_DURATION = 180000; // 3 menit ON
 const unsigned long MIST_OFF_DURATION = 60000; // 1 menit OFF
 const unsigned long MIST_CYCLE_TOTAL = 240000; // 4 menit total
-
-// ── Fan Auto-OFF & Kalibrasi ──
-const float FAN_OFF_TEMP = 20.0;
-const float TEMP_OFFSET = -4.0; // Kalibrasi DHT22
 
 // ── NTP ──
 const char *NTP_SERVER = "pool.ntp.org";
@@ -304,7 +298,7 @@ String buildSensorPayload() {
   JsonDocument doc; 
   bool hasData = false;
   
-  // PERBAIKAN KRUSIAL MASTER: Mengganti semua format strip (-) menjadi underscore (_)
+  
   if (!isnan(suhuValue) && suhuValue >= 0.0f && suhuValue <= 60.0f) { 
     doc["suhu_rumah_kaca"] = round(suhuValue * 10) / 10.0; hasData = true; 
   }
