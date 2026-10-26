@@ -18,10 +18,7 @@
 // ================================================================
 //  KONFIGURASI
 // ================================================================
-// CATATAN PENELITIAN:
-// Berkas ini merupakan PERBAIKAN dari cuplikan REV25 yang diberikan.
-// Berkas ini bukan bukti bahwa kode yang sama terunggah pada Juni–Juli 2026.
-// Gunakan raw data penelitian yang tersimpan tanpa penyesuaian retroaktif.
+
 const char *WIFI_SSID = "Greenhouse_Polman";
 const char *WIFI_PASSWORD = "tad42026";
 
